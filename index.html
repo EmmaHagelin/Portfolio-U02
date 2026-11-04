@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Hagelin - Fullstack Developer</title>
+    <link rel="icon" href="images/sparkle.png" type="image/png">
+ <!-- Picks light or dark theme -->
+    <script src="theme.js"></script>
+<!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400:0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header/Navigation -->
+     <header class="site-header">
+        <nav class="nav" aria-label="Main Navigation">
+            <a href="index.html" class="logo">Emma<span>.</span></a>
+
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="menu-toggle__bar"></span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tech-stack.html">Tech Stack</a></li> 
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+                <!-- Moon icon for dark mode -->
+                 <svg class="icon icon-moon" viewbox="0 0 24 24" aria-hidden="true">
+                    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+                 </svg>
+            </button>
+        </nav>
+     </header>
+
+     <main id="main" class="hero">
+        <div class="hero__text">
+            <p class="eyebrow-reveal">Fullstack JavaScript Developer</p>
+            <h1 class="hero__hi">Hi, I'm</span>
+            <span class="hero_name gradient-text">Emma Hagelin</span>
+        </h1>
+        <p class="hero__lead reveal">
+            From hairstylist to developer - I build things for the web with the same eye for detail,
+            colour and the people who use them.
+        </p>
+
+        <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="projects.html">View my work</a>
+            <a class="btn btn--ghost" href="contact.html">Get in touch</a>
+        </div>
+        </div>
+
+        <div class="hero__portrait reveal">
+            <div class="arch">
+                <img src="images/hero-image.jpg" alt="Emma Hagelin seen from behind, looking out over a green valley" width="320" height="427" fetchpriority="high">
+            </div>
+
+            <!-- Decorative sparkles -->
+             <img class="sparkle sparkle--1" src="images/sparkle.png" alt="" width="22" height="22" aria-hidden="true">
+                <img class="sparkle sparkle--2" src="images/sparkle.png" alt="" width="16" height="16" aria-hidden="true">
+                <img class="sparkle sparkle--3" src="images/sparkle.png" alt="" width="14" height="14" aria-hidden="true">
+        </div>
+     </main>
+
+     <!-- Footer -->
+      <footer class="site-footer">
+        <p>
+            Made with <span class="love">Love &amp; Late Nights</span> by
+            <span class="footer-name">Emma Hagelin</span> © <span id="year">2026</span>
+        </p>
+      </footer>
+<body>
+</body>
+</html>
