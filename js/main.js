@@ -3,10 +3,10 @@
 //Imports the other files and runs only what this page needs
 
 import { initThemeToggle } from "./theme.js";
-import { initMenu } from "./menu.js";
-import { initCV } from "./cv.js";
-import { initProjects } from "./projects.js";
-import { observeReveals } from  "./reveal.js";
+import { initMenu } from "./Menu.js";
+import { initCV } from "./Cv.js";
+import { initProjects } from "./Projects.js";
+import { observeReveals } from  "./Reveal.js";
 
 document.documentElement.classList.add("js"); // turns on the fade-in animations in style.css
 
