@@ -1,8 +1,8 @@
 //CV from json - about.html and tech-stack.html
 
-import { fetchJson } from "./Api.js";
+import { fetchJson } from "./api.js";
 import { createElement, showStatus, clearStatus } from "./dom.js";
-import { observeReveals } from "./Reveal.js"
+import { observeReveals } from "./reveal.js"
 
 let cvStatus, educationList, workList, techList;
 
@@ -15,7 +15,7 @@ async function loadCV() {
     showStatus(cvStatus, "Loading...");
 
     try {
-        const cv = await fetchJson("cv.json");
+        const cv = await fetchJson("../json/cv.json");
 
         //Only render the parts that exist on this page
         

@@ -1,0 +1,71 @@
+{
+    "education": [
+        {
+            "period": "Aug 2026 - present",
+            "title": "Fullstack JavaScript Developer",
+            "place": "Chas Academy, Stockholm",
+            "type": "Full time"
+        },
+        {
+            "period": "Mar 2023 - May 2024",
+            "title": "Hairstylist",
+            "place": "Style Education, Stockholm",
+            "type": "Full time"
+        },
+        {
+            "period": "2017 - 2020",
+            "title": "Business Management and Economics Programme",
+            "place": "St:a Ragnhildgymnasium, Östertälje",
+            "type": "Full time"
+        }
+    ],
+    "work": [
+        {
+            "period": "Mar 2023 - May 2024",
+            "title": "Hairstylist",
+            "place": "Style Education, Stockholm",
+            "type": "Appenticeshop"
+        },
+        {
+            "period": "Aug 2021 - Feb 2022",
+            "title": "Production Worker, Paint Shop",
+            "place": "Scania, Södertälje",
+            "type": "Full time"
+        },
+        {
+            "period": "Aug 2020 - Jun 2021",
+            "title": "Groundkeeper",
+            "place": "Telge Tillväxt, Södertälje",
+            "type": "Full time"
+        }
+    ],
+    "techstack": [
+        {
+            "category": "Frontend",
+            "items": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React",
+                "Tailwind"
+            ]
+        },
+        {
+            "category": "Tools",
+            "items":
+            [
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Figma"
+            ]
+        },
+        {
+            "category": "Learning next",
+            "items": [
+                "Node.js",
+                "APIs"
+            ]
+        }
+    ]
+}
