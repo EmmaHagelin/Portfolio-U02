@@ -15,17 +15,17 @@ async function loadCV() {
     showStatus(cvStatus, "Loading...");
 
     try {
-        const cv = await fetchJson("../json/cv.json");
+        const cv = await fetchJson("json/cv.json");
 
         //Only render the parts that exist on this page
         
         if (educationList) renderTimeline(educationList, cv.education);
         if (workList) renderTimeline(workList, cv.work);
-        if (techList) renderTimeline(workList, cv.techstack);
+        if (techList) renderTechStack(techList, cv.techstack);
 
         clearStatus(cvStatus);
     } catch (error) {
-        console.warn("cv.json could not be loaded:", error.messege);
+        console.warn("cv.json could not be loaded:", error.message);
         showStatus(cvStatus, "This content could not be loaded right now.", loadCV);
     }
 }
@@ -38,19 +38,20 @@ function renderTimeline(list, entries = []) {
     }
     
     const items = entries.map((entry) => {
-        const items = createElement("li", "timeline__item");
-        items.append(
+        const item = createElement("li", "timeline__item");
+        item.append(
             createElement("p", "timeline__period", entry.period),
             createElement("h3", "timeline__title", entry.title),
             createElement("p", "timeline__place", entry.place)
         );
 
         //type is optional in cv.json ("Full time" or "Apprenticeship")
-        if(entry.type) items.append(createElement("p", "tag timeline__type", entry.type));
-        return items;
+        if(entry.type) item.append(createElement("p", "tag timeline__type", entry.type));
+        return item;
     });
 
     list.replaceChildren(...items);
+}
 
     function renderTechStack(list, groups = []) {
         const items = groups.map((group) => {
@@ -61,10 +62,9 @@ function renderTimeline(list, entries = []) {
             group.items.forEach((skill) => tags.append(createElement("li", "tag", skill)));
             card.append(createElement("h2", "card-title", group.category), tags);
             item.append(card);
-            return items;
+            return item;
         });
 
         list.replaceChildren(...items);
         observeReveals(list);
     }
-}

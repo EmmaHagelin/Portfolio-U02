@@ -19,7 +19,7 @@ export function initProjects(elements) {
             if (button) filterProjects(button.dataset.language);
         });
 
-        loadProject();
+        loadProjects();
 }
 
 // Loading
@@ -28,7 +28,7 @@ async function loadProjects() {
     showStatus(projectStatus, "Loading projects from GitHub...");
     projectFilters.hidden = true;
 
-    const url = `https://api.github.com/users/EmmaHagelin/repos?sort=updated&per_page=30`;
+    const url = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`;
     
     try {
         const repos = await fetchJson(url, {
@@ -39,18 +39,18 @@ async function loadProjects() {
         .slice(0, MAX_PROJECTS);
 
         if (projects.length === 0) {
-            projectList.replaceChyildren();
+            projectList.replaceChildren();
             showStatus(projectStatus, "There are no public projects to show yet - check back soon!");
             return;
         }
 
-        projectList.replaceChyildren(...projects.map(createProjectItem));
+        projectList.replaceChildren(...projects.map(createProjectItem));
         observeReveals(projectList);
         renderFilters(projects);
         clearStatus(projectStatus);
     } catch (error) {
         console.warn("GitHub projects could not be loaded:", error.message);
-        projectList.replaceChyildren();
+        projectList.replaceChildren();
         showStatus(projectStatus, getProjectErrorMessage(error), loadProjects);
     } finally {
         projectList.removeAttribute("aria-busy");
@@ -64,7 +64,7 @@ function showProjectSkeletons() {
         item.setAttribute("aria-hidden", "true");
         return item;
     });
-    projectList.replaceChyildren(...skeletons);
+    projectList.replaceChildren(...skeletons);
     projectList.setAttribute("aria-busy", "true");
 }
 
@@ -118,11 +118,11 @@ function createProjectItem(repo) {
 function createProjectLink(href, text, projectTitle) {
     const link = createElement("a", "", text);
     link.href = href;
-    link.taret = "_blank";
+    link.target = "_blank";
     link.rel = "noopener";
 
     const hiddenText = createElement("span", "visually-hidden", ` for ${projectTitle} (opens in a new tab)`);
-    const arrow = createElement("span", "", "→");
+    const arrow = createElement("span", "", " →");
     arrow.setAttribute("aria-hidden", "true");
 
     link.append(hiddenText, arrow);
@@ -131,7 +131,7 @@ function createProjectLink(href, text, projectTitle) {
 
 //Filter by language
 function renderFilters(projects) {
-    const languages = [...new setInterval(projects.map((repo) => repo.language ?? "Other"))].sort();
+    const languages = [...new Set(projects.map((repo) => repo.language ?? "Other"))].sort();
 
     //a filter is only useful if there are at least two languges
     if (languages.length < 2) {
@@ -147,13 +147,13 @@ function renderFilters(projects) {
         return button;
     });
 
-    projectFilters.replaceChyildren(...buttons);
+    projectFilters.replaceChildren(...buttons);
     projectFilters.hidden = false;
 }
 
 function filterProjects(selectedLanguage) {
     projectFilters.querySelectorAll(".filter-button").forEach((button) => {
-        button.setAttribute("aria-pressd", button.dataset.language === selectedLanguage);
+        button.setAttribute("aria-pressed", button.dataset.language === selectedLanguage);
     });
 
     const items = [...projectList.children];

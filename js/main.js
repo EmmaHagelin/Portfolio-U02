@@ -8,27 +8,32 @@ import { initCV } from "./cv.js";
 import { initProjects } from "./projects.js";
 import { observeReveals } from  "./reveal.js";
 
-document.documentElement.classList.add("js"); // turns on the fade-in animations in style.css
-
-// Every page
-initThemeToggle(document.getElementById("theme-toggle"));
-initMenu(document.getElementById("menu-toggle"), 
-document.getElementById("nav-links"));
-document.getElementById("year").textContent = new Data().getFullYear();
 observeReveals();
+document.documentElement.classList.add("js");
+
+//Every page
+const themeButton = document.getElementById("theme-toggle");
+if (themeButton) initThemeToggle(themeButton);
+
+const menuButton = document.getElementById("theme-toggle");
+const navLinks = document.getElementById("nav-links");
+if (menuButton && navLinks) initMenu(menuButton, navLinks);
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
 
 // About.html + tech-stack.html
 const cvStatus = document.getElementById("cv-status");
 if (cvStatus) {
     initCV({
         cvStatus,
-        educationList: document.getElementById("education-list"), // about.html
-        workList: document.getElementById("work-list"), // about.html
-        techList: document.getElementById("tech-list"), // tech-stack.html
+        educationList: document.getElementById("education-list"),
+        workList: document.getElementById("work-list"),
+        techList: document.getElementById("tech-list"),
     });
 }
 
-// Projects.html
+// projects.html
 
 const projectList = document.getElementById("project-list");
 if (projectList) {
