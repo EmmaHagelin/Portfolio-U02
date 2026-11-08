@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="Emma Hagelin - Fullstack JavaScript Developer in Stockholm.">
     <title>Emma Hagelin - Fullstack Developer</title>
     <link rel="icon" href="images/sparkle.png" type="image/png">
+
  <!-- Picks light or dark theme -->
-    <script src="theme.js"></script>
+    <script src="js/theme-init.js"></script>
+
 <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400:0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <script type="module" src="js/Main.js"></script>
 </head>
+
+<body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- Header/Navigation -->
@@ -52,7 +58,8 @@
      <main id="main" class="hero">
         <div class="hero__text">
             <p class="eyebrow-reveal">Fullstack JavaScript Developer</p>
-            <h1 class="hero__hi">Hi, I'm</span>
+            <h1 clas="hero__title reveal">
+            <span class="hero__hi">Hi, I'm</span>
             <span class="hero_name gradient-text">Emma Hagelin</span>
         </h1>
         <p class="hero__lead reveal">
@@ -65,7 +72,7 @@
             <a class="btn btn--ghost" href="contact.html">Get in touch</a>
         </div>
         </div>
-
+ <!-- Arched portrait-->
         <div class="hero__portrait reveal">
             <div class="arch">
                 <img src="images/hero-image.jpg" alt="Emma Hagelin seen from behind, looking out over a green valley" width="320" height="427" fetchpriority="high">
