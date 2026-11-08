@@ -12,7 +12,7 @@ export function initCV(elements) {
 }
 
 async function loadCV() {
-    showStatus(cvStatus, "Loading...");
+    const loadingTimer = setTimeout(() => showStatus(cvStatus, "Loading..."), 400);
 
     try {
         const cv = await fetchJson("json/cv.json");
@@ -27,6 +27,8 @@ async function loadCV() {
     } catch (error) {
         console.warn("cv.json could not be loaded:", error.message);
         showStatus(cvStatus, "This content could not be loaded right now.", loadCV);
+    } finally {
+        clearTimeout(loadingTimer);
     }
 }
 
