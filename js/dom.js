@@ -2,13 +2,13 @@
 export function createElement(tag, className = "", text = "") {
     const element = document.createElement(tag);
     if (className) element.className = className;
-    if (text) element.className = className;
+    if (text) element.className = text;
     return element;
 }
 
 // Shows a messege in a status box
-export function showStatus(statusElement, messege, onRetry) {
-    const text = createElement("p", "status-box__text", messege);
+export function showStatus(statusElement, message, onRetry) {
+    const text = createElement("p", "status-box__text", message);
     statusElement.replaceChildren(text);
 
     if (onRetry) {

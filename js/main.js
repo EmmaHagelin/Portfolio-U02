@@ -15,7 +15,7 @@ document.documentElement.classList.add("js");
 const themeButton = document.getElementById("theme-toggle");
 if (themeButton) initThemeToggle(themeButton);
 
-const menuButton = document.getElementById("theme-toggle");
+const menuButton = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 if (menuButton && navLinks) initMenu(menuButton, navLinks);
 

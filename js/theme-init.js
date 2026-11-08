@@ -9,7 +9,7 @@ try {
     //localStorage can be blocked
 }
 
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark").matches;
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (savedTheme === "dark" || (savedTheme === null && prefersDark)) {
     document.documentElement.classList.add("dark");

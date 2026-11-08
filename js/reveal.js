@@ -12,8 +12,8 @@ const revealObserver = new IntersectionObserver(
     { threshold: 0.15 }
 );
 
-export function observeReveals(containter = document) {
-    containter.querySelectorAll(".reveal:not(.is-visibl)").forEach((element) => {
+export function observeReveals(container = document) {
+    container.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
         revealObserver.observe(element);
     });
 }
