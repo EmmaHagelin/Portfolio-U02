@@ -1,0 +1,97 @@
+/* Projects.css - projects.html */
+.project-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 2fr));
+    gap: 1.5rem;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    height: 100%;
+}
+
+/* thin gradient line on top of each card */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    opacity: .7;
+    transition: opacity .4s ease;
+}
+
+.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.project-card:hover::before { opacity: 1; }
+.project-card__title {
+    font-size: 1.6rem;
+    font-style: italic;
+    text-transform: capitalize;
+}
+.project-card__description { margin: 0 0 1.2rem; flex-grow: 1; }
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+.filter-button {
+    padding: .45rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s, color .2s;
+}
+
+.filter-button:hover { border-color: var(--accent-2); }
+.filter-button[aria-pressed="true"] {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-color: color-mix(in srgb, var(--tag-text) 35%, transparent);
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+}
+
+.project-lang { display: flex; align-items: center; gap: .4rem; color: var(--muted); }
+.project-lang::before {
+    content: "";
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent-2);
+}
+.project-links { display: flex; gap: 1rem; }
+.project-links a {
+    font-weight: 600;
+    color: var(--accent-1);
+    text-decoration: none;
+}
+.project-links a:hover { text-decoration: underline; }
+
+/*Shimmering placeholder cards while projects load */
+.skeleton {
+    min-height: 190px;
+    background: linear-gradient(100deg, var(--surface) 30%, var(--tag-bg) 50%, var(--surface) 70%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer {
+    to { background-position: -200% 0; }
+}

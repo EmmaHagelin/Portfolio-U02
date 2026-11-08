@@ -1,0 +1,47 @@
+/* 10. Contact.css - contact.html */
+
+.contact-card {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+.contact-card::before {
+    content: "♡";
+    display: block;
+    font-size: 2rem;
+    color: var(--accent-2);
+    margin-bottom: .5rem;
+}
+
+.contact-card__text {
+    max-width: 34rem;
+    margin: 0 auto 2rem;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--heading);
+}
+
+.contact-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .contact-card { padding: 1.75rem; }
+}
+
+/* Phone */
+
+@media (max-width: 760px) {
+    .contact-card { padding: 1.5rem; }
+}

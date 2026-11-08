@@ -1,0 +1,12 @@
+/* 8. Tech Stack */
+
+.tech-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-grid .card { height: 100%;}
